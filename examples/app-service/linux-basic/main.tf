@@ -2,6 +2,16 @@ provider "azurerm" {
   features {}
 }
 
+variable "location" {
+  type = string
+  default = "eastus"
+}
+
+variable "prefix" {
+  type = string
+  default = "example"
+}
+
 resource "azurerm_resource_group" "example" {
   name     = "${var.prefix}-resources"
   location = var.location
